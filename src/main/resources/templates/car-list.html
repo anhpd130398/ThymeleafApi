@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car List</title>
+</head>
+<body>
+<div>
+    <div>
+        <h2>List Cars</h2>
+        <table style=" background-color: darkgray; width: 300px " border="1">
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>car_name</th>
+                <th>update car</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="cars :${cars}">
+                <td th:text="${cars.id}" style="text-align: center"></td>
+                <td th:text="${cars.carName}"></td>
+                <td style="text-align: center; ">
+                    <a th:href="@{/updateCar(carId=${cars.id})}" style="text-decoration: none; cursor: pointer;color: blue">update</a>
+                    <a th:href="@{/deleteByCar(carId=${cars.id})}" style="text-decoration: none; cursor: pointer;color: blue">delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div style="width: 100px; height: 20px; color: red; margin-top: 10px ;background-color: aqua;text-align: center; padding-top: 5px">
+            <a th:href="@{/}"
+               style="text-decoration: none; cursor: pointer; font-size: 16px;">
+                back to list </a>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>

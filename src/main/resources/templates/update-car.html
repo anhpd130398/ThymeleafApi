@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Car</title>
+</head>
+<body>
+  <div>
+    <h2>Edit Car</h2>
+    <form th:action="@{/editCar(id=${car.id})}"  method="post">
+      <div >
+        <input type="text" th:field="*{car.carName}"  placeholder="Car Name">
+        <button type="submit">save</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
